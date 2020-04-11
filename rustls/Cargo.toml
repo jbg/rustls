@@ -16,7 +16,7 @@ base64 = "0.12"
 log = { version = "0.4.4", optional = true }
 ring = "0.16.11"
 sct = "0.6.0"
-webpki = "0.21.0"
+webpki = { git = "https://github.com/jbg/webpki", branch = "self-signed" }
 
 [features]
 default = ["logging"]
@@ -28,7 +28,7 @@ quic = []
 env_logger = "0.7.1"
 log = "0.4.4"
 tempfile = "3.0"
-webpki-roots = "0.19.0"
+webpki-roots = { git = "https://github.com/jbg/webpki-roots" }
 criterion = "0.3.0"
 
 [[example]]

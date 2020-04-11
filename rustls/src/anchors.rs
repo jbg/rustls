@@ -16,6 +16,7 @@ pub struct OwnedTrustAnchor {
     subject: Vec<u8>,
     spki: Vec<u8>,
     name_constraints: Option<Vec<u8>>,
+    is_end_entity: bool,
 }
 
 impl OwnedTrustAnchor {
@@ -24,6 +25,7 @@ impl OwnedTrustAnchor {
             subject: t.subject.to_vec(),
             spki: t.spki.to_vec(),
             name_constraints: t.name_constraints.map(|x| x.to_vec()),
+            is_end_entity: t.is_end_entity,
         }
     }
 
@@ -34,6 +36,7 @@ impl OwnedTrustAnchor {
             name_constraints: self.name_constraints
                 .as_ref()
                 .map(Vec::as_slice),
+            is_end_entity: self.is_end_entity,
         }
     }
 }
